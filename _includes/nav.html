@@ -15,15 +15,21 @@
                 {%- capture v_lnk -%}
                 {% link index.html %}
                 {%- endcapture -%}
+                <div class="a-icon">
+                    <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
+                        <a class="fa fa-arrow-circle-o-left fa-2x twitter-icon" target="_blank" href="https://twitter.com/{{ site.twitter_username }}"></a>
+                    </a>
+                </div>
+            {%- else -%}
+                <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
+                    <b>포트폴리오</b>
+                </a>
             {%- endif -%}
-
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
-                <b>포트폴리오</b>
-            </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
         <div>
+            {%- if v_layout != "posts" -%}
             <ul class="nav navbar-nav navbar-right" style="display: flex; float: right;">
                 <li>
                     <a class="page-scroll" href="{{ v_lnk }}#about">정보</a>
@@ -35,6 +41,7 @@
                     <a class="page-scroll" href="{{ v_lnk }}#portfolio">프로젝트</a>
                 </li>
             </ul>
+            {%- endif -%}
         </div>
         <!-- /.navbar-collapse -->
     </div>
