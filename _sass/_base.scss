@@ -88,7 +88,7 @@ aside {
             > a:focus {
                 text-transform: uppercase;
                 font-weight: 500;
-                font-size: 13px;
+                font-size: 16px;
                 color: $theme-dark;
                 &:hover {
                     color: $theme-highlight;
@@ -199,6 +199,16 @@ header {
         }
     }
 }
+header::before {
+    content: "";
+    opacity: 0.45;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+}
 
 // Sections
 
@@ -282,6 +292,39 @@ header {
 // Bootstrap Overrides
 .text-primary {
     color: $theme-primary;
+}
+
+.a-icon{
+    a{
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.twitter-icon {
+    &:hover {
+        color: rgb(52, 179, 238);
+    }
+}
+
+.github-icon {
+    &:hover {
+        color: rgb(19, 19, 19);
+    }
+}
+
+.linkedin-icon {
+    &:hover {
+        color: rgb(21, 103, 226);
+    }
+}
+
+.mail-icon {
+    &:hover {
+        color: rgb(226, 171, 21);
+    }
 }
 
 .no-gutter > [class*='col-'] {

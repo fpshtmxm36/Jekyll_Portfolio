@@ -2,13 +2,14 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <!--
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            -->
             {%- assign v_layout = page.layout -%}
             {%- if v_layout == "posts" -%}
                 {%- capture v_lnk -%}
@@ -19,38 +20,19 @@
             <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
                 <b>포트폴리오</b>
             </a>
-            <!--
-            <a class="navbar-brand page-scroll text-center" href="mailto:{{ site.email }}">
-                <i class="fa fa-envelope-o fa-2x"></i>
-            </a>
-            -->
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#about">정보</a>
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#services">기술</a>
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#portfolio">프로젝트</a>
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#contact">연락</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+        <div>
+            <ul class="nav navbar-nav navbar-right" style="display: flex; float: right;">
                 <li>
-                    <a class="page-scroll" href="/posts">
-                        <i class="fa fa-book"></i>
-                        Post
-                    </a>
+                    <a class="page-scroll" href="{{ v_lnk }}#about">정보</a>
                 </li>
                 <li>
-                    <a class="navbar-brand page-scroll" target="blank" href="https://twitter.com/{{ site.twitter_username }}">
-                        <i class="fa fa-twitter fa-2x"></i>
-                    </a>
+                    <a class="page-scroll" href="{{ v_lnk }}#services">기술</a>
                 </li>
                 <li>
-                    <a class="navbar-brand page-scroll" target="blank" href="https://github.com/{{ site.github_username }}">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                <li>
-                    <a class="navbar-brand page-scroll" target="blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-                        <i class="fa fa-linkedin fa-2x"></i>
-                    </a>
+                    <a class="page-scroll" href="{{ v_lnk }}#portfolio">프로젝트</a>
                 </li>
             </ul>
         </div>
