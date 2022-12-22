@@ -2,7 +2,7 @@
 title: 타이틀
 email:
 description: > # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/Jekyll_Portfolio" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
 twitter_username: fpshtmxm36
