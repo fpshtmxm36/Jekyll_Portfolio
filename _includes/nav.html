@@ -17,7 +17,7 @@
                 {%- endcapture -%}
                 <div class="a-icon">
                     <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
-                        <a class="fa fa-arrow-circle-o-left fa-2x twitter-icon" target="_blank" href="https://twitter.com/{{ site.twitter_username }}"></a>
+                        <b>뒤로가기</b>
                     </a>
                 </div>
             {%- else -%}
@@ -31,14 +31,17 @@
         <div>
             {%- if v_layout != "posts" -%}
             <ul class="nav navbar-nav navbar-right" style="display: flex; float: right;">
-                <li>
-                    <a class="page-scroll" href="{{ v_lnk }}#about">소개</a>
+                <li class="page-scroll" data-href="{{ v_lnk }}#Info">
+                    Info
+                </li>
+                <li class="page-scroll" data-href="{{ v_lnk }}#Stack">
+                    Stack
+                </li>
+                <li class="page-scroll" data-href="{{ v_lnk }}#Project">
+                    Project
                 </li>
                 <li>
-                    <a class="page-scroll" href="{{ v_lnk }}#services">기술</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ v_lnk }}#portfolio">프로젝트</a>
+                    <a class="page-scroll" data-href="{{ v_lnk }}#Career" rel="noopener" >Career</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="file/resume.docx" download="이력서">이력서</a>

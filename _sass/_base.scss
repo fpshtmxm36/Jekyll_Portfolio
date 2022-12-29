@@ -63,6 +63,10 @@ aside {
     padding: 50px 0;
 }
 
+.footer {
+    padding: 40px 0;
+}
+
 .no-padding {
     padding: 0;
 }
@@ -83,10 +87,10 @@ aside {
         }
     }
     .nav {
-        > li {
-            > a,
-            > a:focus {
+        > li,
+          li:focus {
                 text-transform: uppercase;
+                text-align: center;
                 font-weight: 500;
                 font-size: 16px;
                 color: $theme-dark;
@@ -94,16 +98,12 @@ aside {
                     color: $theme-highlight;
                 }
             }
-            &.active {
-                > a,
-                > a:focus {
-                    color: $theme-highlight !important;
+        &.active {
+                color: $theme-highlight !important;
+                background-color: white;
+                &:hover {
                     background-color: white;
-                    &:hover {
-                        background-color: white;
-                    }
                 }
-            }
         }
     }
     @media (min-width: 768px) {
@@ -115,8 +115,8 @@ aside {
                 color: $theme-highlight;
             }
         }
-        .nav > li > a,
-        .nav > li > a:focus {
+        .nav > li,
+        .nav > li:focus {
             color: $theme-dark;
             &:hover {
                 color: $theme-highlight;
@@ -131,8 +131,8 @@ aside {
                     color: darken($theme-highlight, 10%);
                 }
             }
-            .nav > li > a,
-            .nav > li > a:focus {
+            .nav > li,
+            .nav > li:focus {
                 color: $theme-dark;
                 &:hover {
                     color: $theme-highlight;
