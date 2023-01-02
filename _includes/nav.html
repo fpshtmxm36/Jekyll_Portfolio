@@ -2,61 +2,31 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <!--
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            -->
-            {%- assign v_layout = page.layout -%}
-            {%- if v_layout == "posts" -%}
-                {%- capture v_lnk -%}
-                {% link index.html %}
-                {%- endcapture -%}
-                <div>
-                    <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
-                        <b>뒤로가기</b>
-                    </a>
-                </div>
-            {%- else -%}
-            <ul class="nav navbar-nav">
-                <li class="page-scroll" data-href="{{ v_lnk }}#page-top">
-                    포트폴리오
-                </li>
-            </ul>
-            <!--
-            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
-                    <b>포트폴리오</b>
-            </a>
-            -->
-            {%- endif -%}
+            <a class="navbar-brand page-scroll" data-href="#page-top">Home</a>
         </div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-        <div>
-            {%- if v_layout != "posts" -%}
-            <ul class="nav navbar-nav navbar-right" style="display: flex; float: right;">
-                <li class="page-scroll" data-href="{{ v_lnk }}#Info">
-                    Info
-                </li>
-                <li class="page-scroll" data-href="{{ v_lnk }}#Stack">
-                    Stack
-                </li>
-                <li class="page-scroll" data-href="{{ v_lnk }}#Project">
-                    Project
-                </li>
-                <li class="page-scroll" data-href="{{ v_lnk }}#Career">
-                    Career
-                </li>
-                <!--
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="file/resume.docx" download="이력서">이력서</a>
+                    <a class="page-scroll" data-href="#about">About</a>
                 </li>
-                -->
+                <li>
+                    <a class="page-scroll" data-href="#services">Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll" data-href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" data-href="#contact">Contact</a>
+                </li>
             </ul>
-            {%- endif -%}
         </div>
         <!-- /.navbar-collapse -->
     </div>
