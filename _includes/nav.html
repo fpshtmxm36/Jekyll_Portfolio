@@ -15,15 +15,22 @@
                 {%- capture v_lnk -%}
                 {% link index.html %}
                 {%- endcapture -%}
-                <div class="a-icon">
+                <div>
                     <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
                         <b>뒤로가기</b>
                     </a>
                 </div>
             {%- else -%}
-                <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
+            <ul class="nav navbar-nav">
+                <li class="page-scroll" data-href="{{ v_lnk }}#page-top">
+                    포트폴리오
+                </li>
+            </ul>
+            <!--
+            <a class="navbar-brand page-scroll" href="{{ v_lnk }}#page-top">
                     <b>포트폴리오</b>
-                </a>
+            </a>
+            -->
             {%- endif -%}
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,12 +47,14 @@
                 <li class="page-scroll" data-href="{{ v_lnk }}#Project">
                     Project
                 </li>
-                <li>
-                    <a class="page-scroll" data-href="{{ v_lnk }}#Career" rel="noopener" >Career</a>
+                <li class="page-scroll" data-href="{{ v_lnk }}#Career">
+                    Career
                 </li>
+                <!--
                 <li>
                     <a class="page-scroll" href="file/resume.docx" download="이력서">이력서</a>
                 </li>
+                -->
             </ul>
             {%- endif -%}
         </div>
