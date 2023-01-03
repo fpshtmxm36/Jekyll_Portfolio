@@ -2,10 +2,6 @@ html,
 body {
     height: 100%;
     width: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 body {
@@ -183,7 +179,6 @@ header {
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
-                visibility:hidden;
             }
             hr {
                 margin: 30px auto;
@@ -315,7 +310,6 @@ header::before {
 }
 
 .a-icon{
-    visibility:hidden;
     a{
         color: white;
         text-decoration: none;
