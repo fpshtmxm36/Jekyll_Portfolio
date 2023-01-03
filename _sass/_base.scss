@@ -2,7 +2,6 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-size: 80%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -85,44 +84,56 @@ aside {
     @include transition-all;
     .navbar-header .navbar-brand {
         color: $theme-dark;
-        font-weight: 500;
         @include IBM-Plex-Sans;
-        &:hover {
+        font-weight: 700;
+        &:hover,
+        &:focus {
             color: darken($theme-highlight, 10%);
         }
     }
     .nav {
-        > li,
-          li:focus {
+        > li {
+            > a,
+            > a:focus {
                 text-transform: uppercase;
-                text-align: center;
-                font-weight: 500;
+                font-weight: 700;
+                font-size: 13px;
                 color: $theme-dark;
-                cursor: pointer;
                 &:hover {
-                    color: $theme-highlight;
-                    background-color: white;
+                    color: $theme-primary;
                 }
             }
-        &.active {
-                color: $theme-highlight !important;
-                background-color: white;
-                &:hover {
-                    background-color: white;
+            &.active {
+                > a,
+                > a:focus {
+                    color: $theme-primary !important;
+                    background-color: transparent;
+                    &:hover {
+                        background-color: transparent;
+                    }
                 }
+            }
+        }
+        &:hover {
+            background-color: transparent;
         }
     }
+
     @media (min-width: 768px) {
         background-color: white;
         border-color: rgba($theme-dark, .5);
         .navbar-header .navbar-brand {
             color: $theme-dark;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $theme-highlight;
             }
         }
-        .nav > li,
-        .nav > li:focus {
+        .nav > li{
+            background-color: white;
+        }
+        .nav > li > a,
+        .nav > li > a:focus {
             color: $theme-dark;
             &:hover {
                 color: $theme-highlight;
@@ -133,15 +144,17 @@ aside {
             border-color: rgba($theme-dark, .5);
             .navbar-header .navbar-brand {
                 color: $theme-dark;
-                &:hover {
+                font-size: 22px;
+                &:hover,
+                &:focus {
                     color: darken($theme-highlight, 10%);
                 }
             }
-            .nav > li,
-            .nav > li:focus {
+            .nav > li > a,
+            .nav > li > a:focus {
                 color: $theme-dark;
                 &:hover {
-                    color: $theme-highlight;
+                    color: $theme-primary;
                 }
             }
         }
