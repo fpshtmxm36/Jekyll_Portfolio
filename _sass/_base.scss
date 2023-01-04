@@ -95,6 +95,7 @@ aside {
                 font-weight: 700;
                 font-size: 13px;
                 color: $theme-dark;
+                text-decoration: none !important;
                 &:hover {
                     color: $theme-primary;
                 }
@@ -307,6 +308,14 @@ header::before {
 // Bootstrap Overrides
 .text-primary {
     color: $theme-primary;
+}
+
+.text-dark {
+    color: $theme-dark;
+}
+
+.text-white {
+    color: white;
 }
 
 .a-icon{
