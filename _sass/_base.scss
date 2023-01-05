@@ -1,7 +1,35 @@
+:root {
+    --navbar: #FFF;
+    --navborder: #a0a0a0;
+    --navfont: #333;
+    --hr: #333;
+    --info: #89a3c4;
+    --stack: #7288a5;
+    --career: #61738b;
+    --project: #586980;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --navbar: #272727;
+        --navborder: #202020;
+        --navfont: #FFF;
+        --hr: #FFF;
+        --info: #4c5a6b;
+        --stack: #3d4858;
+        --career: #2d3541;
+        --project: #1f242c;
+    }
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -9,21 +37,29 @@ body {
 }
 
 hr {
-    border-color: $theme-primary;
+    border-color: var(--hr);
+    border-width: 1px;
+    max-width: 100%;
+}
+
+hr.title {
+    border-color: $theme-highlight;
     border-width: 3px;
     max-width: 50px;
 }
 
-hr.light {
+hr.title.light {
     border-color: white;
 }
 
 a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
     @include transition-all;
-    color: $theme-primary;
+    color: $theme-highlight;
     &:hover,
     &:focus {
-        color: darken($theme-primary, 10%);
+        color: $theme-highlight;
     }
 }
 
@@ -46,9 +82,66 @@ p {
     background-color: $theme-primary;
 }
 
+.bg-info {
+    background-color: var(--info);
+    color: var(--navfont);
+}
+
+.bg-stack {
+    background-image: url('../img/stack.jpg');
+    position: relative;
+    background-size: cover;
+    color: var(--navfont);
+}
+.bg-stack::before {
+    content: "";
+    opacity: 0.95;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: var(--stack);
+}
+
+.bg-career {
+    background-color: var(--career);
+    color: var(--navfont);
+}
+
+.bg-project {
+    background-image: url('../img/project.jpg');
+    position: relative;
+    background-size: cover;
+    color: var(--navfont);
+}
+.bg-project::before {
+    content: "";
+    opacity: 0.95;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: var(--project);
+}
+
+.bg-footer {
+    background-color: var(--navbar);
+    color: var(--navfont);
+}
+
+.bg-highlight {
+    background-color: $theme-highlight;
+}
+
 .bg-dark {
     background-color: $theme-dark;
     color: white;
+}
+
+.bg-content {
+    background-color: $theme-content;
 }
 
 .text-faded {
@@ -56,15 +149,15 @@ p {
 }
 
 section {
-    padding: 100px 0;
+    padding: 65px 0;
 }
 
 aside {
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .footer {
-    padding: 40px 0;
+    padding: 25px 0;
 }
 
 .no-padding {
@@ -74,17 +167,18 @@ aside {
 // Navigation
 
 .navbar-default {
-    background-color: white;
-    border-color: rgba($theme-dark, .5);
+    background-color: var(--navbar);
+    border-color: var(--navborder);
+    border-bottom-width: 2px;
     @include Noto-Sans;
     @include transition-all;
     .navbar-header .navbar-brand {
-        color: $theme-dark;
+        color: var(--navfont);
         @include IBM-Plex-Sans;
         font-weight: 700;
         &:hover,
         &:focus {
-            color: darken($theme-highlight, 10%);
+            color: $theme-highlight;
         }
     }
     .nav {
@@ -93,17 +187,17 @@ aside {
             > a:focus {
                 text-transform: uppercase;
                 font-weight: 700;
-                font-size: 13px;
-                color: $theme-dark;
+                font-size: 15px;
+                color: var(--navfont);
                 text-decoration: none !important;
                 &:hover {
-                    color: $theme-primary;
+                    color: $theme-highlight;
                 }
             }
             &.active {
                 > a,
                 > a:focus {
-                    color: $theme-primary !important;
+                    color: $theme-highlight !important;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -115,43 +209,51 @@ aside {
             background-color: transparent;
         }
     }
+    .nav>li:focus, .nav>li:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+    .navbar-nav{
+        margin: 3px;
+    }
 
     @media (min-width: 768px) {
-        background-color: white;
-        border-color: rgba($theme-dark, .5);
+        background-color: var(--navbar);
+        border-color: var(--navborder);
         .navbar-header .navbar-brand {
-            color: $theme-dark;
+            color: var(--navfont);
+            font-size: 22px;
             &:hover,
             &:focus {
                 color: $theme-highlight;
             }
         }
         .nav > li{
-            background-color: white;
+            background-color: transparent !important;
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: $theme-dark;
+            color: var(--navfont);
             &:hover {
                 color: $theme-highlight;
             }
         }
         &.affix {
-            background-color: white;
-            border-color: rgba($theme-dark, .5);
+            background-color: var(--navbar);
+            border-color: var(--navborder);
             .navbar-header .navbar-brand {
-                color: $theme-dark;
+                color: var(--navfont);
                 font-size: 22px;
                 &:hover,
                 &:focus {
-                    color: darken($theme-highlight, 10%);
+                    color: $theme-highlight;
                 }
             }
             .nav > li > a,
             .nav > li > a:focus {
-                color: $theme-dark;
+                color: var(--navfont);
                 &:hover {
-                    color: $theme-primary;
+                    color: $theme-highlight;
                 }
             }
         }
@@ -230,6 +332,17 @@ header::before {
 
 .section-heading {
     margin-top: 0;
+}
+
+.content-box {
+    max-width: 100%;
+    margin: 10px auto 0;
+    @media (min-width: 992px) {
+        margin: 10px auto 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .service-box {
