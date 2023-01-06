@@ -3,10 +3,10 @@
     --navborder: #a0a0a0;
     --navfont: #333;
     --hr: #333;
-    --info: #89a3c4;
-    --stack: #7288a5;
-    --career: #61738b;
-    --project: #586980;
+    --info: #bdcee4;
+    --stack: #97a5b6;
+    --career: #818c9b;
+    --project: #6e7885;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,10 +15,10 @@
         --navborder: #202020;
         --navfont: #FFF;
         --hr: #FFF;
-        --info: #4c5a6b;
-        --stack: #3d4858;
-        --career: #2d3541;
-        --project: #1f242c;
+        --info: #6e7885;
+        --stack: #5c646e;
+        --career: #434950;
+        --project: #2f3338;
     }
 }
 
@@ -163,6 +163,29 @@ aside {
 .no-padding {
     padding: 0;
 }
+
+// container
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+        width: 90%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 90%;
+    }
+  }
 
 // Navigation
 
@@ -524,3 +547,36 @@ body {
     -webkit-tap-highlight-color: $theme-dark;
 }
 
+// image
+.img-stack{
+  display: block;
+  max-width: 100px;
+  height: auto;
+}
+
+.tip-stack {
+    position: relative;
+	display: inline-block;
+	margin: auto;
+    padding: 3px;
+    background-color: #a13f3f;
+}
+  
+.tip-stack-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #484848;
+    padding: 0;
+    color: white;
+    text-align: left;
+    position: absolute;
+    margin-left: 31px;
+    bottom: -6%;
+    z-index: 1;
+    padding: 3px;
+    border-radius: 5px;
+}
+  
+.tip-stack:hover .tip-stack-text {
+    visibility: visible;
+}
