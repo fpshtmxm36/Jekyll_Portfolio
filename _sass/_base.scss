@@ -173,17 +173,17 @@ aside {
   }
   @media (min-width: 768px) {
     .container {
-      width: 90%;
+      width: 70%;
     }
   }
   @media (min-width: 992px) {
     .container {
-        width: 90%;
+        width: 70%;
     }
   }
   @media (min-width: 1200px) {
     .container {
-      width: 90%;
+      width: 70%;
     }
   }
 
@@ -210,7 +210,7 @@ aside {
             > a:focus {
                 text-transform: uppercase;
                 font-weight: 700;
-                font-size: 15px;
+                font-size: 14px;
                 color: var(--navfont);
                 text-decoration: none !important;
                 &:hover {
