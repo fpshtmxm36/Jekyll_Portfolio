@@ -1,25 +1,12 @@
 :root {
-    --navbar: #FFF;
-    --navborder: #a0a0a0;
-    --navfont: #333;
-    --hr: #333;
-    --info: #bdcee4;
-    --stack: #97a5b6;
-    --career: #818c9b;
-    --project: #6e7885;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --navbar: #272727;
-        --navborder: #202020;
-        --navfont: #FFF;
-        --hr: #FFF;
-        --info: #6e7885;
-        --stack: #5c646e;
-        --career: #434950;
-        --project: #2f3338;
-    }
+    --navbar: #272727;
+    --navborder: #202020;
+    --navfont: #FFF;
+    --hr: #FFF;
+    --info: #161616;
+    --career: #141414;
+    --stack: #141414;
+    --project: #2c2c2c;
 }
 
 html,
@@ -34,6 +21,7 @@ body {
 
 body {
     @include Nanum-Gothic;
+    font-size: 15px;
 }
 
 hr {
@@ -70,6 +58,8 @@ h4,
 h5,
 h6 {
     @include Noto-Sans;
+    margin-top: 17px;
+    margin-bottom: 17px;
 }
 
 p {
@@ -87,6 +77,22 @@ p {
     color: var(--navfont);
 }
 
+.bg-career {
+    background-image: url('../img/project.jpg');
+    position: relative;
+    background-size: cover;
+    color: var(--navfont);
+}.bg-career::before {
+    content: "";
+    opacity: 0.9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: var(--career);
+}
+
 .bg-stack {
     background-image: url('../img/stack.jpg');
     position: relative;
@@ -95,7 +101,7 @@ p {
 }
 .bg-stack::before {
     content: "";
-    opacity: 0.95;
+    opacity: 0.9;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -104,26 +110,9 @@ p {
     background-color: var(--stack);
 }
 
-.bg-career {
-    background-color: var(--career);
-    color: var(--navfont);
-}
-
 .bg-project {
-    background-image: url('../img/project.jpg');
-    position: relative;
-    background-size: cover;
-    color: var(--navfont);
-}
-.bg-project::before {
-    content: "";
-    opacity: 0.95;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
     background-color: var(--project);
+    color: var(--navfont);
 }
 
 .bg-footer {
@@ -196,8 +185,9 @@ aside {
     @include Noto-Sans;
     @include transition-all;
     .navbar-header .navbar-brand {
-        color: var(--navfont);
         @include IBM-Plex-Sans;
+        color: var(--navfont);
+        padding: 10px 20px;
         font-weight: 700;
         &:hover,
         &:focus {
@@ -245,7 +235,6 @@ aside {
         border-color: var(--navborder);
         .navbar-header .navbar-brand {
             color: var(--navfont);
-            font-size: 22px;
             &:hover,
             &:focus {
                 color: $theme-highlight;
@@ -266,7 +255,6 @@ aside {
             border-color: var(--navborder);
             .navbar-header .navbar-brand {
                 color: var(--navfont);
-                font-size: 22px;
                 &:hover,
                 &:focus {
                     color: $theme-highlight;
@@ -384,6 +372,7 @@ header::before {
     display: block;
     max-width: 650px;
     margin: 0 auto;
+    border-radius: 20px;
     .portfolio-box-caption {
         color: white;
         opacity: 0;
@@ -394,6 +383,7 @@ header::before {
         text-align: center;
         width: 100%;
         height: 100%;
+        border-radius: 20px;
         @include transition-all;
         .portfolio-box-caption-content {
             width: 100%;
@@ -433,6 +423,10 @@ header::before {
             }
         }
     }
+}
+
+.img-responsive{
+    border-radius: 20px;
 }
 
 .call-to-action {
@@ -545,6 +539,7 @@ img::-moz-selection {
 
 body {
     -webkit-tap-highlight-color: $theme-dark;
+    @include IBM-Plex-Sans;
 }
 
 // image
@@ -554,29 +549,88 @@ body {
   height: auto;
 }
 
-.tip-stack {
-    position: relative;
-	display: inline-block;
-	margin: auto;
-    padding: 3px;
-    background-color: #a13f3f;
+//
+.career-box{
+    display: block;
+    min-height: 150px;
+    margin: 5px;
+    padding: 6px;
+    background-color: #b6b6b65e;
+    border-radius: 10px;
 }
-  
-.tip-stack-text {
-    visibility: hidden;
-    width: 220px;
-    background-color: #484848;
-    padding: 0;
-    color: white;
-    text-align: left;
+
+.career-inbox{
     position: absolute;
-    margin-left: 31px;
-    bottom: -6%;
-    z-index: 1;
-    padding: 3px;
+    top: 70%;
+}
+
+.career-button{
+    position: absolute;
+    background-color: rgba(143, 143, 143, 0.5);
+    min-height: 150px;
+    width: 70px;
+    bottom: 0%;
+    right: 0%;
+    border-radius: 0 10px 10px 0
+}
+
+.career-button-icon{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.lineblock-stack {
+    display: inline-block;
+    position: relative;
+	margin: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #6897b342;
     border-radius: 5px;
 }
-  
-.tip-stack:hover .tip-stack-text {
-    visibility: visible;
+
+.lineblock-date {
+    display: inline-block;
+    position: relative;
+	margin: 5px 7px 5px auto;
+    padding: 4px 6px 4px 6px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #5ba3adcb;
+    border-radius: 4px;
+}
+
+.lineblock-skill {
+    display: inline-block;
+    position: relative;
+	margin: 5px auto 5px auto;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #919191cb;
+    border-radius: 5px;
+}
+
+.row{
+    display: block;
+}
+@media (min-width: 768px) {
+    .row{
+        display: block;
+    }
+}
+@media (min-width: 992px) {
+    .row{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (min-width: 1200px) {
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
