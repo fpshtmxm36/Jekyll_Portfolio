@@ -20,7 +20,7 @@ body {
 }
 
 body {
-    @include Nanum-Gothic;
+    @include Noto-Sans;
     font-size: 15px;
 }
 
@@ -537,11 +537,6 @@ img::-moz-selection {
     background: transparent;
 }
 
-body {
-    -webkit-tap-highlight-color: $theme-dark;
-    @include IBM-Plex-Sans;
-}
-
 // image
 .img-stack{
   display: block;
@@ -551,9 +546,10 @@ body {
 
 //
 .career-box{
+    position: relative;
     display: block;
-    min-height: 150px;
-    margin: 5px;
+    min-height: 400px;
+    margin: 0px 5px 10px 5px;
     padding: 6px;
     background-color: #b6b6b65e;
     border-radius: 10px;
@@ -562,23 +558,6 @@ body {
 .career-inbox{
     position: absolute;
     top: 70%;
-}
-
-.career-button{
-    position: absolute;
-    background-color: rgba(143, 143, 143, 0.5);
-    min-height: 150px;
-    width: 70px;
-    bottom: 0%;
-    right: 0%;
-    border-radius: 0 10px 10px 0
-}
-
-.career-button-icon{
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    transform: translateX(-50%) translateY(50%);
 }
 
 .lineblock-stack {
