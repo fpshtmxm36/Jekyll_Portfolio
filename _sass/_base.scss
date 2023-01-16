@@ -556,8 +556,13 @@ img::-moz-selection {
 }
 
 .career-inbox{
-    position: absolute;
-    top: 70%;
+    display: inline-block;
+    position: relative;
+	margin: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #6897b342;
+    border-radius: 5px;
 }
 
 .lineblock-stack {
