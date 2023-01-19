@@ -1,12 +1,6 @@
 :root {
-    --navbar: #272727;
-    --navborder: #202020;
-    --navfont: #FFF;
-    --hr: #FFF;
-    --info: #161616;
-    --career: #141414;
-    --stack: #141414;
-    --project: #2c2c2c;
+    --career: #636363;
+    --project: #6e6868;
 }
 
 html,
@@ -17,11 +11,26 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    @include Noto-Sans;
+    font-size: 15px;
 }
 
 body {
-    @include Noto-Sans;
-    font-size: 15px;
+    --font: #1d1d1d;
+    --navbar: #f0f0f0;
+    --navborder: #8a8a8a;
+    --hr: #ffffff;
+    --info: #f1f1f1;
+    --stack: #979797;
+}
+
+body[data-theme="dark"]{
+    --font: #fafafa;
+    --navbar: #272727;
+    --navborder: #1a1a1a;
+    --hr: #333333;
+    --info: #3d3d3d;
+    --stack: #505050;
 }
 
 hr {
@@ -74,50 +83,32 @@ p {
 
 .bg-info {
     background-color: var(--info);
-    color: var(--navfont);
+    color: var(--font);
+}
+
+.bg-info {
+    background-color: var(--info);
+    color: var(--font);
 }
 
 .bg-career {
-    background-image: url('../img/project.jpg');
-    position: relative;
-    background-size: cover;
-    color: var(--navfont);
-}.bg-career::before {
-    content: "";
-    opacity: 0.9;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
     background-color: var(--career);
+    color: var(--font);
 }
 
 .bg-stack {
-    background-image: url('../img/stack.jpg');
-    position: relative;
-    background-size: cover;
-    color: var(--navfont);
-}
-.bg-stack::before {
-    content: "";
-    opacity: 0.9;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
     background-color: var(--stack);
+    color: var(--font);
 }
 
 .bg-project {
     background-color: var(--project);
-    color: var(--navfont);
+    color: var(--font);
 }
 
 .bg-footer {
     background-color: var(--navbar);
-    color: var(--navfont);
+    color: var(--font);
 }
 
 .bg-highlight {
@@ -186,7 +177,7 @@ aside {
     @include transition-all;
     .navbar-header .navbar-brand {
         @include IBM-Plex-Sans;
-        color: var(--navfont);
+        color: var(--font);
         padding: 10px 20px;
         font-weight: 700;
         &:hover,
@@ -201,7 +192,7 @@ aside {
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: 14px;
-                color: var(--navfont);
+                color: var(--font);
                 text-decoration: none !important;
                 &:hover {
                     color: $theme-highlight;
@@ -234,7 +225,7 @@ aside {
         background-color: var(--navbar);
         border-color: var(--navborder);
         .navbar-header .navbar-brand {
-            color: var(--navfont);
+            color: var(--font);
             &:hover,
             &:focus {
                 color: $theme-highlight;
@@ -242,10 +233,10 @@ aside {
         }
         .nav > li{
             background-color: transparent !important;
+            color: var(--font);
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: var(--navfont);
             &:hover {
                 color: $theme-highlight;
             }
@@ -254,7 +245,6 @@ aside {
             background-color: var(--navbar);
             border-color: var(--navborder);
             .navbar-header .navbar-brand {
-                color: var(--navfont);
                 &:hover,
                 &:focus {
                     color: $theme-highlight;
@@ -262,7 +252,6 @@ aside {
             }
             .nav > li > a,
             .nav > li > a:focus {
-                color: var(--navfont);
                 &:hover {
                     color: $theme-highlight;
                 }
@@ -544,21 +533,32 @@ img::-moz-selection {
   height: auto;
 }
 
+.career-image{
+    background-color: #4c9de95e;
+    position: relative;
+    display: inline-block;
+    align-self: baseline;
+    text-align: center;
+    margin: 0px 5px 10px 5px;
+    padding: 15px 20px;
+}
+
 //
 .career-box{
     position: relative;
     display: block;
-    min-height: 400px;
     margin: 0px 5px 10px 5px;
     padding: 15px 20px;
-    background-color: #b6b6b65e;
-    border-radius: 10px;
     ul{
         padding-left:0px;
     }
     li{
         list-style:none;
     }
+}
+
+.career-info{
+    border-bottom: 1px solid #FFFFFF;
 }
 
 .career-inbox{
