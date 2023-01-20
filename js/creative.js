@@ -18,12 +18,8 @@
     
     $('#mode-switch').bind('click', function(event) {
         if(document.body.dataset.theme == "light"){
-            $('#switch').addClass("fa-moon-o");
-            $('#switch').removeClass("fa-sun-o");
             document.body.dataset.theme = "dark";
         }else{
-            $('#switch').addClass("fa-sun-o");
-            $('#switch').removeClass("fa-moon-o");
             document.body.dataset.theme = "light";
         }
     });

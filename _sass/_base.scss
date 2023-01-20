@@ -1,8 +1,3 @@
-:root {
-    --career: #636363;
-    --project: #6e6868;
-}
-
 html,
 body {
     height: 100%;
@@ -19,18 +14,24 @@ body {
     --font: #1d1d1d;
     --navbar: #f0f0f0;
     --navborder: #8a8a8a;
+    --navclick: #c4c4c4;
     --hr: #ffffff;
-    --info: #f1f1f1;
-    --stack: #979797;
+    --info: #e8e8e8;
+    --stack: #e8e8e8;
+    --career: #e8e8e8;
+    --project: #e8e8e8;
 }
 
 body[data-theme="dark"]{
     --font: #fafafa;
     --navbar: #272727;
     --navborder: #1a1a1a;
+    --navclick: #555555;
     --hr: #333333;
-    --info: #3d3d3d;
-    --stack: #505050;
+    --info: #4f4f4f;
+    --stack: #4f4f4f;
+    --career: #4f4f4f;
+    --project: #4f4f4f;
 }
 
 hr {
@@ -168,6 +169,15 @@ aside {
   }
 
 // Navigation
+.navbar-toggle{
+    background-color: var(--navbar) !important;
+    color: var(--font);
+    &:hover,
+    &:focus{
+        background-color: var(--navclick) !important;
+        color: var(--font);
+    }
+}
 
 .navbar-default {
     background-color: var(--navbar);
@@ -187,6 +197,7 @@ aside {
     }
     .nav {
         > li {
+            color: var(--font);
             > a,
             > a:focus {
                 text-transform: uppercase;
@@ -623,4 +634,13 @@ img::-moz-selection {
         justify-content: center;
         align-items: center;
     }
+}
+
+.theme-button{
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    background-color: var(--navbar);
+    color: var(--font);
+    border-radius: 25%;
 }
