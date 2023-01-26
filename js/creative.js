@@ -7,6 +7,20 @@
 (function($) {
     "use strict"; // Start of use strict
 
+    // Detect Dark Theme
+    $(document).ready(function(){
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.dataset.theme = "dark";
+        }else{
+            document.body.dataset.theme = "light";
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const newColorScheme = event.matches ? "dark" : "light";
+            document.body.dataset.theme = newColorScheme;
+        });
+    });
+    
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -16,6 +30,7 @@
         event.preventDefault();
     });
     
+    // Theme Switch
     $('#mode-switch').bind('click', function(event) {
         if(document.body.dataset.theme == "light"){
             document.body.dataset.theme = "dark";

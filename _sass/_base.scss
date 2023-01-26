@@ -8,6 +8,7 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    background-color: var(--section);
 }
 
 body {
@@ -34,6 +35,34 @@ body[data-theme="dark"]{
     --lb-date: #133146df;
     --lb-skill: #1e1e35df;
     --footer: #2c2c2c;
+}
+
+@media (prefers-color-scheme: dark){
+    body {
+        --font: #1d1d1d;
+        --navbar: #f7f7f7;
+        --navborder: #8a8a8a;
+        --navclick: #c4c4c4;
+        --hr: #333333;
+        --section: #efefef;
+        --lb-stack: #51ccb7df;
+        --lb-date: #3fa3e6df;
+        --lb-skill: #8482e7df;
+        --footer: #9c9c9c;
+    }
+    
+    body[data-theme="dark"]{
+        --font: #f7f7f7;
+        --navbar: #272727;
+        --navborder: #1a1a1a;
+        --navclick: #464646;
+        --hr: #f7f7f7;
+        --section: #444444;
+        --lb-stack: #0f463cdf;
+        --lb-date: #133146df;
+        --lb-skill: #1e1e35df;
+        --footer: #2c2c2c;
+    }
 }
 
 hr {
@@ -554,7 +583,7 @@ img::-moz-selection {
 .lineblock-stack {
     display: inline-block;
     position: relative;
-	margin: auto;
+	margin: 5px 5px 5px auto;
     padding: 5px;
     font-size: 16px;
     background-color: var(--lb-stack);
